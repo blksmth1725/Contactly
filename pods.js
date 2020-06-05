@@ -26,13 +26,13 @@ export const page1 = {
 		},
 		{
 			id: "05",
-			Name: "Dojo",
+			Name: "Studio",
 			Participants: "10",
 			Date: "11/11/2020",
 		},
 		{
 			id: "06",
-			Name: "WE",
+			Name: "Network",
 			Participants: "12",
 			Date: "11/12/2016",
 		},

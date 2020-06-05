@@ -33,13 +33,14 @@ export default function AppHome() {
 					<Text
 						style={{
 							backgroundColor: "#E8E8E8",
-							height: 50,
+							height: 80,
 							shadowOffset: { width: 0, height: 3 },
 							shadowColor: "#c0c0c0",
 							shadowOpacity: 1.0,
 						}}
 					>
 						{item.Name}
+						{item.Date}
 					</Text>
 				)}
 				ListFooterComponent={
