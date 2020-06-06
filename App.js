@@ -9,10 +9,6 @@ import RegisterForm from "./src/registerForm";
 import LoginForm from "./src/loginForm";
 import AppHome from "./src/home";
 
-function MoodCard() {
-	return <View style={{ height: 808, backgroundColor: "#E8E8E8" }}></View>;
-}
-
 const Stack = createStackNavigator();
 
 function App() {
@@ -23,7 +19,6 @@ function App() {
 				<Stack.Screen name="Sign Up" component={RegisterForm} />
 				<Stack.Screen name="Login" component={LoginForm} />
 				<Stack.Screen name="App Home" component={AppHome} />
-				<Stack.Screen name="Mood Card" component={MoodCard} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

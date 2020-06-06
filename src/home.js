@@ -1,13 +1,15 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import {
 	StyleSheet,
 	Text,
 	View,
 	FlatList,
 	TouchableOpacity,
+	Button,
 } from "react-native";
 
-import { page1, page2 } from "../pods";
+import { PodsList } from "../pods";
+import { SafeAreaView } from "react-navigation";
 
 const podIcon = require("./images/chemistryPod.png");
 
@@ -16,40 +18,67 @@ export default function AppHome() {
 
 	useEffect(() => {
 		setTimeout(() => {
-			setData(page1.data);
+			setData(PodsList.DATA);
 		}, 1500);
 	}, []);
 
-	const nextPage = () => {
-		setData([...data, page2.data]);
-	};
-
 	return (
 		<View style={styles.baseLayout}>
-			<FlatList
-				data={data}
-				keyExtractor={(item) => item.id}
-				renderItem={({ item }) => (
-					<Text
-						style={{
-							backgroundColor: "#E8E8E8",
-							height: 80,
-							shadowOffset: { width: 0, height: 3 },
-							shadowColor: "#c0c0c0",
-							shadowOpacity: 1.0,
-						}}
-					>
-						{item.Name}
-						{item.Date}
-					</Text>
-				)}
-				ListFooterComponent={
-					<TouchableOpacity onPress={nextPage}>
-						<Text>NEXT PAGE</Text>
-					</TouchableOpacity>
-				}
-				ListEmptyComponent={<Text>LOADING...</Text>}
-			/>
+			<View
+				style={{
+					height: 50,
+					display: "flex",
+					flexDirection: "column",
+					alignItems: "center",
+					justifyContent: "center",
+				}}
+			>
+				<Text>MOOD</Text>
+			</View>
+			<View style={styles.moodView}></View>
+			<View
+				style={{
+					height: 50,
+					display: "flex",
+					flexDirection: "column",
+					alignItems: "center",
+					justifyContent: "center",
+				}}
+			>
+				<Text>PODS</Text>
+			</View>
+			<SafeAreaView
+				style={{
+					height: 500,
+				}}
+			>
+				<FlatList
+					data={data}
+					keyExtractor={(item) => item.id}
+					renderItem={({ item }) => (
+						<Text
+							style={{
+								backgroundColor: "#E8E8E8",
+								height: 100,
+								shadowOffset: { width: 0, height: 3 },
+								shadowColor: "#c0c0c0",
+								shadowOpacity: 1.0,
+							}}
+						>
+							{item.Name}
+							{item.Date}
+						</Text>
+					)}
+				/>
+			</SafeAreaView>
+			<View>
+				<TouchableOpacity style={styles.baselineButton}>
+					<Button
+						title="Baseline"
+						onPress={() => navigation.navigate("Baseline")}
+					/>
+				</TouchableOpacity>
+			</View>
 		</View>
 	);
 }
@@ -61,8 +90,8 @@ const styles = StyleSheet.create({
 		display: "flex",
 	},
 	moodView: {
-		height: 90,
-		backgroundColor: "#E8E8E8",
+		height: 120,
+		backgroundColor: "orange", //"#E8E8E8",
 		shadowOffset: { width: -2, height: 3 },
 		shadowColor: "#c0c0c0",
 		shadowOpacity: 1.0,
@@ -74,13 +103,15 @@ const styles = StyleSheet.create({
 		justifyContent: "space-evenly",
 		backgroundColor: "#E8E8E8" /*"#E8E8E8"*/,
 		height: 610,
-		marginTop: 5,
 		shadowOffset: { width: -2, height: -3 },
 		shadowColor: "#c0c0c0",
 		shadowOpacity: 1.0,
 	},
 
 	baselineButton: {
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "center",
 		height: 100,
 		backgroundColor: "#E8E8E8",
 		shadowOffset: { width: -2, height: -3 },
