@@ -13,15 +13,17 @@ export default function MoodCards() {
 
 const styles = StyleSheet.create({
 	cardContainer: {
+		marginLeft: 25,
+		marginTop: 25,
 		display: "flex",
 		justifyContent: "space-evenly",
 		alignItems: "center",
 		borderRadius: 25,
-		marginRight: 30,
-		shadowOffset: { width: 5, height: 0 },
-		shadowRadius: 20,
+		shadowOffset: { width: 0, height: 0 },
+		shadowRadius: 15,
 		shadowColor: "#c0c0c0",
-		backgroundColor: "orange",
+		shadowOpacity: 2.0,
+		backgroundColor: "#E8E8E8", //"orange",
 		height: 120,
 		width: 120,
 	},

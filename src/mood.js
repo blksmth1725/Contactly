@@ -15,11 +15,10 @@ export default function MoodConatainer() {
 				<View style={styles.moodCardsContainer}>
 					<ScrollView
 						style={{
-							height: 120,
-							backgroundColor: "#E8E8E8",
-							marginLeft: 25,
-							borderBottomLeftRadius: 25,
-							borderTopLeftRadius: 25,
+							height: 170,
+							backgroundColor: "transparent",
+							borderBottomLeftRadius: 40,
+							borderTopLeftRadius: 40,
 						}}
 						showsHorizontalScrollIndicator={false}
 						contentContainerStyle={{ width: 1000 }}
@@ -47,9 +46,15 @@ const styles = StyleSheet.create({
 		flex: 2,
 		flexDirection: "column",
 		height: 150,
+		shadowOffset: { width: 5, height: 0 },
+		shadowRadius: 20,
+		shadowColor: "#c0c0c0",
+		shadowOpacity: 1.0,
 		//backgroundColor: "#E8E8E8",
 	},
 	title: {
+		marginTop: 10,
+		marginBottom: 10,
 		display: "flex",
 		flexDirection: "row",
 		justifyContent: "center",
@@ -66,6 +71,7 @@ const styles = StyleSheet.create({
 		shadowOffset: { width: 0, height: 0 },
 		shadowRadius: 20,
 		shadowColor: "#c0c0c0",
+		shadowOpacity: 1,
 	},
 	moodCardsContainer: {
 		borderTopLeftRadius: 40,
@@ -74,8 +80,6 @@ const styles = StyleSheet.create({
 		backgroundColor: "#E8E8E8",
 		display: "flex",
 		flexDirection: "row",
-		justifyContent: "center",
-		alignItems: "center",
 		width: 414,
 		height: 168,
 	},

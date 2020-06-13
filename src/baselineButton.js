@@ -1,13 +1,13 @@
 import React from "react";
 import { View, TouchableOpacity, Button, StyleSheet } from "react-native";
 
-export default function FooterButton() {
+export default function BaseLineButton({ navigation }) {
 	return (
 		<View>
 			<TouchableOpacity style={styles.baselineButton}>
 				<Button
-					title="Baseline"
-					onPress={() => navigation.navigate("Baseline")}
+					title="Base line"
+					onPress={() => navigation.navigate("Base Line")}
 				/>
 			</TouchableOpacity>
 		</View>

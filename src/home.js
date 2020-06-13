@@ -3,14 +3,14 @@ import { View, StyleSheet } from "react-native";
 
 import MoodContainer from "./mood";
 import PodContainer from "./pods";
-import FooterButton from "./footerButtons";
+import BaseLineButton from "./baselineButton";
 
 export default function AppHome() {
 	return (
 		<View style={styles.baseLayout}>
 			<MoodContainer />
 			<PodContainer />
-			<FooterButton />
+			<BaseLineButton />
 		</View>
 	);
 }
